@@ -4,6 +4,11 @@
 </script>
 
 <h1>Hello {name}</h1>
+
+<button on:click={() => {name = 'Heropy'}}>
+	Change!
+</button>
+
 <Hello/>
 
 <style>
