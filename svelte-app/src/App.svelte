@@ -1,30 +1,13 @@
 <script>
-    let name = 'world';
-    let age = 85
-    /* setTimeout(() => {
-        name = 'Heropy'
-        age = 36
-    }, 1000) */
+    import Something from './Something.svelte'
 
-    function assign() {
-        name = 'Heropy'
-        age = 36
-    }
+    let toggle = false
 </script>
 
-<h1>Hello {name}!</h1>
-<h2 class={age < 85 ? 'active' : ''}>
-    {age}
-</h2>
-<img src="" alt={name}/>
-<input type="text" bind:value="{name}"/>
-<button on:click={assign}>Assign</button>
+<button on:click={() => {toggle = !toggle}}>
+    Toggle
+</button>
 
-<style>
-    h1{
-        color : red;
-    }
-    .active{
-        color : blue;
-    }
-</style>
+{#if toggle}
+    <Something/>
+{/if}
