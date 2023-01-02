@@ -9,6 +9,13 @@
         })
 })*/
 
+function enter(){
+    name = 'enter'
+}
+
+function leave(){
+    name = 'leave'
+}
 
 </script>
 
@@ -17,8 +24,8 @@
     class="box"
     style="background-color: {isRed ? 'red' : 'orange'};"
     on:click={() => {isRed = !isRed}}
-    on:mouseenter={() => {name = 'enter'}}
-    on:mouseleave={() => {name = 'leave'}}>Box!
+    on:mouseenter={enter}
+    on:mouseleave={leave}>Box!
 </div>
 <style>
     .box {
