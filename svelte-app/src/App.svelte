@@ -1,10 +1,26 @@
 <script>
-    import { storeName } from './store.js'
-    import Parent from "./Parent.svelte";
+    import Todo from "./Todo.svelte";
+    let title = ''
+    let todos = []
+    let id = 0
 
-    let name = 'world';
-    $storeName = name
+    function createTodo(){
+        todos.push({
+            id, 
+            title 
+        })
+        todos = todos
+        title = ''
+        id += 1
+    }
 </script>
 
-<h1>Hello {name}</h1>
-<Parent name={name}/>
+<input bind:value={title} 
+       type="text" />
+<button on:click={createTodo}>
+    Create Todo
+</button>
+
+{#each todos as todo}
+    <Todo {todo}/>
+{/each}
