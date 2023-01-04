@@ -1,7 +1,7 @@
 <script>
     import {onMount, onDestroy} from 'svelte'
 
-    onMount(() => {
+    onMount(async () => {
         console.log('Mounted!')
         return () => {
             console.log('Destory in mount')
